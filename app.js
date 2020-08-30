@@ -28,24 +28,22 @@ app.set('views', path.join(__dirname, 'views')) // Set the views directory
 // ENDPOINTS
 app.get('/', (req, res)=>{
     const params = {}
-    res.status(200).render('home.pug', params);
+    res.render('home.pug', params);
 })
 
 app.get('/contact', (req, res)=>{
     const params = {}
-    res.status(200).render('contact.pug', params);
+    res.render('contact.pug', params);
 })
 
 app.post('/contact', (req, res)=>{
     var myData = new Contact(req.body);
     myData.save().then(()=>{
         res.render("contact.pug")
+        console.log(body)
     }).catch(()=>{
-        res.statusCode(400).send("Your details couldn't be saved to database")
+        res.send("Your details couldn't be saved to database")
     })
-    let messages = []
-    messages.push('your d has been saved')
-    // res.status(200).render('contact.pug');
 })
 
 // START THE SERVER
