@@ -4,13 +4,17 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "watch": "nodemon ./app.js",
+    "firebase": "firebase init",
+    "firebaselog": "firebase login",
+    "start": "node ./app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "mongoose": "^5.10.0",
     "pug": "^3.0.0"
   },
   "devDependencies": {

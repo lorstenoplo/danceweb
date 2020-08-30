@@ -2,10 +2,12 @@ doctype html
 html
   head
     title NishanthDanceAcademy
-    block scripts
     block style 
+    block scripts
+      script(src='../static/index.js')
+
   body
-    nav#navbar
+    nav.navbar
         ul
             div#logo 
              img(src="/static/logo.jpg")
@@ -14,7 +16,8 @@ html
             li #[a(href = "/") About]
             li #[a(href = "/contact") Contact Us]
             li #[a(href = "/") Class Info]
-            li #[a(href = "/") Services ]    
+
     block content
+    block script
     #footer
         |CopyRight 2020 © NishanthDanceAcademy | All rights reserved 

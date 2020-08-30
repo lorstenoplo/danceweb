@@ -1,7 +1,4 @@
 extends base.pug
-block scripts
-    script(src='/static/index.js')
-
 block style 
     style
          include ../static/style.css
@@ -9,11 +6,11 @@ block style
 block content
     div.container
         h1 Contact Us
-        form(action="input",class='myForm',method='POST')
+        form(action="/contact",class='myForm',method='post')
             input(type="text",name='name', class='myInput', placeholder='Enter your name')
             input(type="phone",name='phone', class='myInput', placeholder='Enter your phone-number')
             input(type="email",name='email', class='myInput', placeholder='Enter your E-mail')
             input(type="text",name='address', class='myInput', placeholder='Enter your address')
             input(type="desc",name='desc', class='myInput', placeholder='More About You')
-            button(class='btn')
+            button(class='btn' onclick='fun()')
                 |Submit

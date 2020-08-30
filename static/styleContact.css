@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Pangolin&family=Shadows+Into+Light&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lacquer&display=swap');
 
-*{
-   
-}
 h1{
     text-align: center;
 }
@@ -34,12 +31,45 @@ h1{
     color: white;
     background-color: black;
     cursor: pointer;
+    outline: none;
 }
-.btn:active{
-    background-color: white;
-    color: black;
+.btn:hover{
+    background-color: rgb(36, 33, 33);
+    color: white;
 }
 .container{
     font-family: 'Pangolin', cursive;
-    min-height: 82vh;
+    min-height: 86vh;
+}
+
+
+@media only screen and (max-width: 1000px){
+    .myInput{
+        font-size: 4rem;
+        padding: 45px 45px;
+        height: 70px;
+        margin: 20px;
+        width: 96vw;
+    }
+    .myForm{
+        position: absolute;
+        top: 30%;
+    }
+    .container h1{
+        left: 20%;
+        top: 20%;
+        position: absolute;
+        font-size: 7rem;
+        margin: 20px;
+    }
+    .btn{
+        width: 60%;
+        padding: 30px 16px;
+        font-size: 3.7rem;
+    }
+    #footer{
+        position: absolute;
+        bottom: 0;
+width: 100vw;
+    }
 }
