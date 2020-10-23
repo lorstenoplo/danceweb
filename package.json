@@ -1,23 +1,23 @@
 {
-  "name": "dance-website",
+  "name": "npm",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
-  "scripts": {
-    "firebase": "firebase init",
-    "firebaselog": "firebase login",
-    "start": "node ./app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
+  "main": "index.js",
   "dependencies": {
-    "body-parser": "^1.19.0",
+    "create-react-app": "^3.4.1",
     "express": "^4.17.1",
-    "mongoose": "^5.10.0",
-    "pug": "^3.0.0"
+    "firebase-tools": "^8.9.2",
+    "mongoose": "^5.10.7",
+    "path": "^0.12.7"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
-  }
+    "nodemon": "^2.0.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "serve": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC"
 }

@@ -3,7 +3,7 @@ const app = express();
 const path = require("path");
 const bodyparser = require("body-parser")
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/contactDance', {useNewUrlParser: true,useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://dbuser:dbuser@cluster0.kxphu.mongodb.net/contactDance?retryWrites=true&w=majority', {useNewUrlParser: true,useUnifiedTopology: true});
 const port = process.env.PORT || 8080; 
 
 //defining mongoose schema
@@ -39,10 +39,12 @@ app.get('/contact', (req, res)=>{
 app.post('/contact', (req, res)=>{
     var myData = new Contact(req.body);
     myData.save().then(()=>{
-        res.render("contact.pug")
-        console.log(body)
+      // res.send("Your details has be saved to database");
+      res.redirect("/contact");
+        console.log(req.body)
     }).catch(()=>{
-        res.send("Your details couldn't be saved to database")
+        res.send("Your details couldn't be saved to database");
+        console.log(req.body)
     })
 })
 
@@ -53,12 +55,12 @@ app.listen(port, ()=>{
 });
 APP_CONFIG = {
   "mongo": {
-    "hostString": "mongodb:27017/db_name",
-    "user": "username",
-    "db": "db_name"
+    "hostString": "mongodb+srv://dbuser:dbuser@cluster0.kxphu.mongodb.net/<contactDance>?retryWrites=true&w=majority",
+    "user": "dbuser",
+    "db": "contactDance"
   }
 }
-var mongoPassword = 'sismictoss';
+var mongoPassword = 'dbuser';
 			
 var http = require('http');
 var server = http.createServer(function(req, res) {
